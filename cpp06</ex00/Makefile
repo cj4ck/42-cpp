@@ -29,7 +29,7 @@ else
 	PROGRESS_TODO_CHAR = ⬜️
 endif
 
-NAME		=	cpp
+NAME		=	convert
 CC			=	c++
 CPP_FLAGS	=	-Wall -Wextra -Werror -std=c++98 --pedantic-errors
 #-g

@@ -6,7 +6,7 @@
 /*   By: cjackows <cjackows@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 15:21:41 by cjackows          #+#    #+#             */
-/*   Updated: 2023/07/17 13:45:47 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/07/19 21:13:00 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,3 @@
 #define R "\033[0m"
 #define E "\033[0m\n"
 #define F "\r\033[K"
-#define A "\033[0A"

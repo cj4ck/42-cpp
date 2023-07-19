@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   ScalarConversion.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjackows <cjackows@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 19:27:21 by cjackows          #+#    #+#             */
-/*   Updated: 2023/07/19 21:06:53 by cjackows         ###   ########.fr       */
+/*   Created: 2023/07/19 11:00:45 by cjackows          #+#    #+#             */
+/*   Updated: 2023/07/19 16:49:36 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <limits.h>
+#include <sstream>
 
-class Data {
+#include "Colors.hpp"
+
+class ScalarConversion {
   public :
-	Data();
-	Data(Data const & str);
-	Data & operator=(Data const & rhs);
-	~Data();
-	std::string intraName;
-	// uintptr_t	test = UINTPTR_MAX;
+	static void convert(const std::string & literal);
+	static bool checkOverflow(const std::string & literal);
+  private :
+	ScalarConversion();
+	~ScalarConversion();
+	ScalarConversion(const ScalarConversion & obj);
+	ScalarConversion & operator=(const ScalarConversion & rhs);
 };
-
-std::ostream & operator<<(std::ostream & ostream, const Data &src);

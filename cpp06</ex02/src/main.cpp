@@ -6,45 +6,27 @@
 /*   By: cjackows <cjackows@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:11:30 by cjackows          #+#    #+#             */
-/*   Updated: 2023/07/19 22:09:01 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/07/19 22:28:45 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "../inc/Colors.hpp"
 #include <cstdlib>
-#include <tr1/random>
 
 class Base { public: virtual ~Base() {} };
 class A : public Base {};
 class B : public Base {};
 class C : public Base {};
 
-Base *generate(void)
-{
-    Base *tmp;
-    int rd;
-
+Base*	generate() {
     srand(time(NULL));
-    rd = 1 + (rand() % 3);
-    std::cout << GREEN << "Generate ";
-    if (rd == 1)
-    {
-        tmp = new A;
-        std::cout << "A" << std::endl;
-    }
-    if (rd == 2)
-    {
-        tmp = new B;
-        std::cout << "B" << std::endl;
-    }
-    if (rd == 3)
-    {
-        tmp = new C;
-        std::cout << "C" << std::endl;
-    }
-    std::cout << E;
-    return(tmp);
+	if (std::rand() % 3 == 0)
+		return (new A);
+	else if (std::rand() % 2 == 1)
+		return (new B);
+	else
+		return (new C);
 }
 
 void	identify(Base* p) {
@@ -84,16 +66,18 @@ void	identify(Base& p) {
 
 int	main( void )
 {
+	std::string wait;
     Base*   a = generate();
-    Base*   b = generate();
-    Base*   c = generate();
-
     std::cout << "a* = "; identify( a );
     std::cout << "a& = "; identify( *a ); std::cout << E;
 
+	while (getline(std::cin, wait)) break;
+    Base*   b = generate();
     std::cout << "b* = "; identify( b );
     std::cout << "b& = "; identify( *b ); std::cout << E;
 
+	while (getline(std::cin, wait)) break;
+    Base*   c = generate();
     std::cout << "c* = "; identify( c );
     std::cout << "c& = "; identify( *c ); std::cout << E;
 

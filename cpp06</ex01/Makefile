@@ -32,6 +32,7 @@ endif
 NAME		=	cpp
 CC			=	c++
 CPP_FLAGS	=	-Wall -Wextra -Werror -std=c++98 --pedantic-errors
+# -fpermissive -std=c++11
 #-g
 
 HDRS_DIR	=	./inc/
