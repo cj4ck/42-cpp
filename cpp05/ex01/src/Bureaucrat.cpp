@@ -6,7 +6,7 @@
 /*   By: cjackows <cjackows@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 10:34:33 by cjackows          #+#    #+#             */
-/*   Updated: 2023/07/18 18:38:47 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/07/19 15:21:27 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,11 @@ std::ostream& operator<<(std::ostream& o, const Bureaucrat& rs) {
 	o << BLUE << rs.getName() << R <<  ", bureaucrat grade " << BLUE << rs.getGrade() << R;
 	return o;
 }
+
+Bureaucrat::MyException(const std::string& arg, const char* file, int line) {
+	std::ostringstream out;
+	out << EX << G "(" << file << ":" << line << ")\n" << RED << "❯ "<< arg << E;
+	msg = out.str();
+}
+
+//! FIX
